@@ -27,7 +27,6 @@
     "@remix-run/eslint-config": "1.7.4",
     "@types/react": "18.0.24",
     "@types/react-dom": "18.0.8",
-    "@vanilla-extract/css": "1.9.1",
     "eslint": "8.26.0",
     "miniflare": "2.11.0",
     "npm-run-all": "4.1.5",

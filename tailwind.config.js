@@ -13,6 +13,9 @@ module.exports = {
         primary:
           "Inter,Helvetica Neue,Arial,Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo,sans-serif",
       },
+      screens: {
+        xs: "475px",
+      },
       animation: {
         "wave-hand": "wave-hand 1.5s infinite",
       },

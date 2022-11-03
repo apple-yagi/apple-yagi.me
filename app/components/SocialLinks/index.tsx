@@ -4,7 +4,7 @@ import { ZennIcon } from "../icons/ZennIcon";
 import { LinkItem } from "../LinkItem";
 
 export const SocialLinks = () => (
-  <div className="grid grid-cols-4 flex-wrap gap-6">
+  <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 flex-wrap gap-6 px-6">
     <a href="https://twitter.com/apple_yagi">
       <LinkItem className="bg-gradient-to-br from-sky-300 via-sky-500 to-blue-500">
         <TwitterIcon width={64} height={64} />
@@ -28,7 +28,7 @@ export const SocialLinks = () => (
     </a>
     <a href="https://zenn.dev/apple_yagi">
       <LinkItem className="bg-gradient-to-br from-slate-100 bg-sky-200 to-blue-300">
-        <ZennIcon width={140} height={140} />
+        <ZennIcon className="aspect-square w-3/4" />
       </LinkItem>
     </a>
   </div>

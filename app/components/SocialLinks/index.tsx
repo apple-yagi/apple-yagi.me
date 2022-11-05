@@ -1,7 +1,7 @@
 import { GitHubIcon } from "../icons/GitHubIcon";
 import { TwitterIcon } from "../icons/TwitterIcon";
 import { ZennIcon } from "../icons/ZennIcon";
-import { LinkItem } from "../LinkItem";
+import { LinkItem } from "./LinkItem";
 
 export const SocialLinks = () => (
   <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 flex-wrap gap-6">

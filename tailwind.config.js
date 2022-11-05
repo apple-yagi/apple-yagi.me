@@ -8,6 +8,7 @@ module.exports = {
       },
       backgroundColor: {
         primary: "#1a1e2e",
+        secondary: "#2b3047",
       },
       fontFamily: {
         primary:

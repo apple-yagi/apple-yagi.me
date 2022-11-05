@@ -4,6 +4,7 @@ import { fetchFeed } from "~/api/zenn";
 import type { Channel } from "~/api/zenn/types";
 import { Container } from "~/components/Container";
 import { Spacer } from "~/components/Spacer";
+import { TimelineCard } from "~/components/TimelineCard";
 
 export const meta: MetaFunction = () => ({
   title: "Timeline | apple-yagi",
@@ -19,9 +20,17 @@ export default function Timeline() {
   return (
     <Container className="px-6">
       <Spacer size={16} />
-      {channel.items.map((item) => (
-        <div>{item.title}</div>
-      ))}
+      <h1 className="text-4xl text-center font-bold">Timeline</h1>
+      <Spacer size={16} />
+      <div className="flex flex-col gap-6">
+        {channel.items.map((item, i) => (
+          <div className="flex" key={i}>
+            {Boolean(i % 2) && <Spacer size={48} />}
+            <TimelineCard item={item} />
+            {!Boolean(i % 2) && <Spacer size={48} />}
+          </div>
+        ))}
+      </div>
     </Container>
   );
 }

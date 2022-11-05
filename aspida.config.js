@@ -1,3 +1,3 @@
 module.exports = {
-  input: "app/api",
+  input: "app/api/microcms",
 };

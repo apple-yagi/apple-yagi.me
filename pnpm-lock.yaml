@@ -10,6 +10,7 @@ specifiers:
   '@remix-run/react': 1.7.4
   '@types/react': 18.0.24
   '@types/react-dom': 18.0.8
+  '@types/xml2js': ^0.4.11
   aspida: 1.11.0
   autoprefixer: 10.4.13
   concurrently: 7.5.0
@@ -24,6 +25,7 @@ specifiers:
   tailwindcss: 3.2.1
   typescript: 4.8.4
   wrangler: 2.1.14
+  xml2js: ^0.4.23
 
 dependencies:
   '@aspida/fetch': 1.11.0
@@ -35,6 +37,7 @@ dependencies:
   microcms-js-sdk: 2.3.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  xml2js: 0.4.23
 
 devDependencies:
   '@cloudflare/workers-types': 3.18.0
@@ -42,6 +45,7 @@ devDependencies:
   '@remix-run/eslint-config': 1.7.4_lmezopescv3nnfjcfgbaewnf6i
   '@types/react': 18.0.24
   '@types/react-dom': 18.0.8
+  '@types/xml2js': 0.4.11
   autoprefixer: 10.4.13_postcss@8.4.18
   concurrently: 7.5.0
   eslint: 8.26.0
@@ -2242,6 +2246,12 @@ packages:
 
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
+    dev: true
+
+  /@types/xml2js/0.4.11:
+    resolution: {integrity: sha512-JdigeAKmCyoJUiQljjr7tQG3if9NkqGUgwEUqBvV0N7LM4HyQk7UXCnusRa1lnvXAEYJ8mw8GtZWioagNztOwA==}
+    dependencies:
+      '@types/node': 18.11.9
     dev: true
 
   /@typescript-eslint/eslint-plugin/5.42.0_6xw5wg2354iw4zujk2f3vyfrzu:
@@ -7469,6 +7479,10 @@ packages:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: true
 
+  /sax/1.2.4:
+    resolution: {integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==}
+    dev: false
+
   /scheduler/0.23.0:
     resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
     dependencies:
@@ -8585,6 +8599,19 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /xml2js/0.4.23:
+    resolution: {integrity: sha512-ySPiMjM0+pLDftHgXY4By0uswI3SPKLDw/i3UXbnO8M/p28zqexCUoPmQFrYD+/1BzhGJSs2i1ERWKJAtiLrug==}
+    engines: {node: '>=4.0.0'}
+    dependencies:
+      sax: 1.2.4
+      xmlbuilder: 11.0.1
+    dev: false
+
+  /xmlbuilder/11.0.1:
+    resolution: {integrity: sha512-fDlsI/kFEx7gLvbecc0/ohLG50fugQp8ryHzMTuW9vSa1GJ0XYWKnhsUx7oie3G98+r56aTQIUB4kht42R3JvA==}
+    engines: {node: '>=4.0'}
+    dev: false
 
   /xregexp/2.0.0:
     resolution: {integrity: sha512-xl/50/Cf32VsGq/1R8jJE5ajH1yMCQkpmoS10QbFZWl2Oor4H0Me64Pu2yxvsRWK3m6soJbmGfzSR7BYmDcWAA==}

@@ -1,0 +1,28 @@
+name: Lighthouse
+on:
+  workflow_run:
+    workflows: ["deploy"]
+    types:
+      - completed
+
+jobs:
+  lighthouse-check:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Lighthouse
+        uses: foo-software/lighthouse-check-action@master
+        id: lighthouseCheck
+        with:
+          urls: "https://apple-yagi.me,https://apple-yagi.me/timeline"
+
+      - name: Verify Lighthouse Check results
+        uses: foo-software/lighthouse-check-status-action@master
+        with:
+          lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
+          minAccessibilityScore: "99"
+          minBestPracticesScore: "99"
+          minPerformanceScore: "99"
+          minSeoScore: "99"
+
+      - if: failure()
+        run: echo failure

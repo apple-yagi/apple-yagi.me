@@ -1,9 +1,9 @@
 import { parseStringPromise } from "xml2js";
-import { Channel } from "./types";
+import { ZeenFeed } from "./types";
 
 const URL = "https://zenn.dev/apple_yagi/feed";
 
-export const fetchFeed = async (): Promise<Channel> => {
+export const fetchZeenFeed = async (): Promise<ZeenFeed> => {
   const xml = await (await fetch(URL)).text();
   let {
     rss: { channel },

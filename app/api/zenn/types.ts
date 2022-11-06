@@ -1,13 +1,13 @@
-export type Channel = {
+export type ZeenFeed = {
   title: string;
   description: string;
   link: string;
   authorImage: string;
   lastBuildDate: string;
-  items: Item[];
+  items: ZeenFeedItem[];
 };
 
-export type Item = {
+export type ZeenFeedItem = {
   title: string;
   description: string;
   link: string;

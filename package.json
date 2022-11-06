@@ -6,6 +6,7 @@
     "build:remix": "remix build",
     "build:css": "tailwindcss -m -i app/styles/app.css -o app/styles/generated.css",
     "deploy": "pnpm build && wrangler publish",
+    "publish": "npm run build && wrangle publish",
     "dev:remix": "remix watch",
     "dev:miniflare": "cross-env NODE_ENV=development miniflare ./build/index.js --watch",
     "dev:css": "tailwindcss -w -i app/styles/app.css -o app/styles/generated.css",

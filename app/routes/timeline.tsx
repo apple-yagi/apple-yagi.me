@@ -22,12 +22,14 @@ export default function Timeline() {
       <Spacer size={16} />
       <h1 className="text-4xl text-center font-bold">Timeline</h1>
       <Spacer size={16} />
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-8">
         {channel.items.map((item, i) => (
-          <div className="flex" key={i}>
-            {Boolean(i % 2) && <Spacer size={48} />}
-            <TimelineCard item={item} />
-            {!Boolean(i % 2) && <Spacer size={48} />}
+          <div className="flex justify-center" key={i}>
+            {Boolean(i % 2) && <Spacer className="hidden sm:block" size={48} />}
+            <TimelineCard item={item} loading={i < 3 ? "eager" : "lazy"} />
+            {!Boolean(i % 2) && (
+              <Spacer className="hidden sm:block" size={48} />
+            )}
           </div>
         ))}
       </div>

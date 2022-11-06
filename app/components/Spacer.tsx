@@ -1,3 +1,5 @@
+import { ComponentProps } from "react";
+
 type Size = typeof TAILWIND_SIZES_MAP[number]["n"];
 type Axis = "vertical" | "horizontal";
 
@@ -6,7 +8,12 @@ interface SpacerProps {
   axis?: Axis;
 }
 
-export const Spacer = ({ size, axis }: SpacerProps) => {
+export const Spacer = ({
+  size,
+  axis,
+  className,
+  ...props
+}: SpacerProps & ComponentProps<"span">) => {
   const w = axis === "vertical" ? "px" : size;
   const h = axis === "horizontal" ? "px" : size;
 
@@ -16,11 +23,13 @@ export const Spacer = ({ size, axis }: SpacerProps) => {
 
   return (
     <span
-      className={`block w-${w} h-${h}`}
+      role="none"
+      className={`block w-${w} h-${h} ${className ?? ""}`}
       style={{
         minWidth: minW,
         minHeight: minH,
       }}
+      {...props}
     />
   );
 };

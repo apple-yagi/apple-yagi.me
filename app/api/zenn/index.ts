@@ -17,12 +17,14 @@ export const fetchFeed = async (): Promise<Channel> => {
     link: channel.link[0],
     authorImage: channel.image[0].url[0],
     lastBuildDate: channel.lastBuildDate[0],
-    items: Array.from(channel.item).map((item: any) => ({
-      title: item.title[0],
-      description: item.description[0],
-      link: item.link[0],
-      pubDate: item.pubDate[0],
-      ogImage: item.enclosure[0]["$"]["url"],
-    })),
+    items: Array.from(channel.item)
+      .map((item: any) => ({
+        title: item.title[0],
+        description: item.description[0],
+        link: item.link[0],
+        pubDate: item.pubDate[0],
+        ogImage: item.enclosure[0]["$"]["url"],
+      }))
+      .sort((a, b) => (a.pubDate > b.pubDate ? 1 : -1)),
   };
 };

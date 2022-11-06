@@ -1,5 +1,6 @@
 name: Lighthouse
 on:
+  workflow_dispatch:
   workflow_run:
     workflows: ["deploy"]
     types:

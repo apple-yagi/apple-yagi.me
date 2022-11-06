@@ -8,7 +8,7 @@ on:
 
 jobs:
   lighthouse-check:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-22.04
     steps:
       - name: Lighthouse
@@ -21,10 +21,10 @@ jobs:
         uses: foo-software/lighthouse-check-status-action@master
         with:
           lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
-          minAccessibilityScore: "99"
-          minBestPracticesScore: "99"
-          minPerformanceScore: "99"
-          minSeoScore: "99"
+          minAccessibilityScore: "100"
+          minBestPracticesScore: "100"
+          minPerformanceScore: "95"
+          minSeoScore: "100"
 
       - if: failure()
         run: echo failure

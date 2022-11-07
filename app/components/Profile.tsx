@@ -4,7 +4,7 @@ export const Profile = () => (
       className="rounded-full aspect-square w-24 h-24"
       src="/apple-yagi.jpg"
       alt="apple-yagi"
-      loading="lazy"
+      loading="eager"
       width={100}
       height={100}
     />

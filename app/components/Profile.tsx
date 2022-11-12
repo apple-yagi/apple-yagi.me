@@ -1,8 +1,10 @@
+import { imageUrl } from "~/utils/imageUrl";
+
 export const Profile = () => (
   <div className="flex items-center sm:items-start gap-6">
     <img
       className="rounded-full aspect-square w-24 h-24"
-      src="/apple-yagi.jpg"
+      src={imageUrl("apple-yagi.jpg")}
       alt="apple-yagi"
       loading="eager"
       width={100}

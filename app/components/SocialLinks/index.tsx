@@ -1,3 +1,4 @@
+import { imageUrl } from "~/utils/imageUrl";
 import { GitHubIcon } from "../icons/GitHubIcon";
 import { TwitterIcon } from "../icons/TwitterIcon";
 import { ZennIcon } from "../icons/ZennIcon";
@@ -18,11 +19,11 @@ export const SocialLinks = () => (
     <a href="https://qiita.com/apple-yagi">
       <LinkItem className="bg-gradient-to-br from-green-200 via-slate-100 to-green-300">
         <img
-          src="/qiita.png"
+          src={imageUrl("qiita.png")}
           alt="Qiita"
           width={64}
           height={64}
-          loading="lazy"
+          loading="eager"
         />
       </LinkItem>
     </a>

@@ -1,17 +1,33 @@
-import { LoaderFunction, MetaFunction } from "@remix-run/cloudflare";
+import { json, LoaderFunction, MetaFunction } from "@remix-run/cloudflare";
 import { useLoaderData } from "@remix-run/react";
 import { fetchZeenFeed } from "~/api/zenn";
 import type { ZeenFeed } from "~/api/zenn/types";
 import { Container } from "~/components/Container";
 import { Spacer } from "~/components/Spacer";
 import { TimelineCard } from "~/components/TimelineCard";
+import { API_FETCH_KV_KEY } from "~/consts/kv";
 
 export const meta: MetaFunction = () => ({
   title: "Timeline | apple-yagi",
 });
 
 export const loader: LoaderFunction = async () => {
-  return fetchZeenFeed();
+  const cacheData = (await API_FETCH_KV.get(
+    API_FETCH_KV_KEY.zennFeed,
+    "json"
+  )) as ZeenFeed;
+
+  if (cacheData) {
+    return json(cacheData);
+  }
+
+  const feed = await fetchZeenFeed();
+
+  await API_FETCH_KV.put("zeen_feed", JSON.stringify(feed), {
+    expirationTtl: 3600,
+  });
+
+  return feed;
 };
 
 export default function Timeline() {

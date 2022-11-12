@@ -1,7 +1,7 @@
-import { Item } from "~/api/zenn/types";
+import { ZeenFeedItem } from "~/api/zenn/types";
 
 type Props = {
-  item: Item;
+  item: ZeenFeedItem;
   loading?: "eager" | "lazy";
 };
 

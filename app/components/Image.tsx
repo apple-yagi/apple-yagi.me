@@ -1,11 +1,11 @@
-import { ComponentPropsWithRef } from "react";
+import { ComponentPropsWithRef, memo } from "react";
 import { imageUrl } from "~/utils/imageUrl";
 
 type Props = {
   imageName: string;
 } & ComponentPropsWithRef<"img">;
 
-export const Image = ({ imageName, className, ...props }: Props) => {
+export const Image = memo(({ imageName, className, ...props }: Props) => {
   const [name, ext] = imageName.split(".");
   const isNotPng = ext !== "png";
 
@@ -26,4 +26,4 @@ export const Image = ({ imageName, className, ...props }: Props) => {
       <img className={className} src={imageUrl(imageName)} {...props} />
     </picture>
   );
-};
+});

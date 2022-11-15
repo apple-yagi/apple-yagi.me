@@ -1,4 +1,3 @@
-import { imageUrl } from "~/utils/imageUrl";
 import { Image } from "./Image";
 
 export const Profile = () => (

@@ -16,6 +16,11 @@ export const SocialLinks = () => (
         <GitHubIcon width={64} height={64} />
       </LinkItem>
     </a>
+    <a href="https://zenn.dev/apple_yagi">
+      <LinkItem className="bg-gradient-to-br from-slate-100 bg-sky-200 to-blue-300">
+        <ZennIcon width={64} height={64} />
+      </LinkItem>
+    </a>
     <a href="https://qiita.com/apple-yagi">
       <LinkItem className="bg-gradient-to-br from-green-200 via-slate-100 to-green-300">
         <Image
@@ -25,11 +30,6 @@ export const SocialLinks = () => (
           height={64}
           loading="eager"
         />
-      </LinkItem>
-    </a>
-    <a href="https://zenn.dev/apple_yagi">
-      <LinkItem className="bg-gradient-to-br from-slate-100 bg-sky-200 to-blue-300">
-        <ZennIcon className="aspect-square w-3/4" />
       </LinkItem>
     </a>
   </div>

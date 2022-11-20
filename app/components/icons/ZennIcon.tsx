@@ -1,7 +1,7 @@
 import { ComponentProps } from "react";
 
 export const ZennIcon = (props: ComponentProps<"svg">) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.3 88.3" {...props}>
+  <svg viewBox="0 0 88.3 88.3" aria-label="Zenn" {...props}>
     <path
       d="M3.79,78.63h15a2.41,2.41,0,0,0,1.94-1.06L61.84,9.94A1.27,1.27,0,0,0,60.7,8H46.54a1.87,1.87,0,0,0-1.67,1L3.09,77.4A.84.84,0,0,0,3.79,78.63Z"
       fill="#3ea8ff"

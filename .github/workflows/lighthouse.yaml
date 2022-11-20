@@ -15,7 +15,7 @@ jobs:
         uses: foo-software/lighthouse-check-action@master
         id: lighthouseCheck
         with:
-          urls: "https://apple-yagi.me,https://apple-yagi.me/timeline"
+          urls: "https://apple-yagi.me"
 
       - name: Verify Lighthouse Check results
         uses: foo-software/lighthouse-check-status-action@master

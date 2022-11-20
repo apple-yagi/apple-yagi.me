@@ -35,7 +35,9 @@ export const loader: LoaderFunction = async () => {
 
   const timeline = promiseList
     .flat()
-    .sort((a, b) => (a.pubDate > b.pubDate ? -1 : 1));
+    .sort((a, b) =>
+      new Date(a.pubDate).getTime() > new Date(b.pubDate).getTime() ? -1 : 1
+    );
 
   await API_FETCH_KV.put(API_FETCH_KV_KEY.timeline, JSON.stringify(timeline), {
     expirationTtl: 3600,

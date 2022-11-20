@@ -1,26 +1,22 @@
-import { ZeenFeedItem } from "~/api/zenn/types";
+import { ZennIcon } from "./icons/ZennIcon";
 
-type Props = {
-  item: ZeenFeedItem;
-  loading?: "eager" | "lazy";
+export type TimelineCardProps = {
+  title: string;
+  pubDate: string;
+  link: string;
 };
 
-export const TimelineCard = ({ item, loading }: Props) => (
-  <a href={item.link}>
+export const TimelineCard = ({ title, pubDate, link }: TimelineCardProps) => (
+  <a href={link}>
     <div className="flex flex-col bg-secondary rounded-xl overflow-hidden hover:-translate-y-1 transition">
-      <img
-        className="object-contain"
-        src={item.ogImage}
-        loading={loading}
-        width={379}
-        height={198}
-        alt={item.title}
-      />
       <div className="p-4">
-        <p className="text-sm sm:text-base">{item.title}</p>
-        <span className="text-xs sm:text-sm">
-          {new Date(item.pubDate).toDateString()}
-        </span>
+        <p className="font-medium text-sm sm:text-base">{title}</p>
+        <div className="flex pt-3 gap-2">
+          <ZennIcon width={20} height={20} />
+          <span className="text-xs sm:text-sm">
+            {new Date(pubDate).toDateString()}
+          </span>
+        </div>
       </div>
     </div>
   </a>

@@ -2,16 +2,16 @@ import { ComponentPropsWithoutRef, memo } from "react";
 import { ZennIcon } from "./icons/ZennIcon";
 import { Image } from "./Image";
 
-export type TimelineKind = "Zenn" | "Prtimes";
+export type TimelineKind = "Zenn" | "Prtimes" | "Qiita";
 
-export type Timeline = {
+export type TimelineItem = {
   title: string;
   pubDate: string;
   link: string;
   kind: TimelineKind;
 };
 
-export type TimelineCardProps = Timeline & ComponentPropsWithoutRef<"div">;
+export type TimelineCardProps = TimelineItem & ComponentPropsWithoutRef<"div">;
 
 const TimelineImage = memo(({ kind }: { kind: TimelineKind }) => {
   switch (kind) {
@@ -22,6 +22,16 @@ const TimelineImage = memo(({ kind }: { kind: TimelineKind }) => {
         <Image
           imageName="prtimes.png"
           alt="PR TIMES"
+          width={20}
+          height={20}
+          loading="lazy"
+        />
+      );
+    case "Qiita":
+      return (
+        <Image
+          imageName="qiita.png"
+          alt="Qiita"
           width={20}
           height={20}
           loading="lazy"

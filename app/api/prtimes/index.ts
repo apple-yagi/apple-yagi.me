@@ -1,9 +1,9 @@
 import { parseStringPromise } from "xml2js";
-import { Timeline } from "~/components/TimelineCard";
+import { TimelineItem } from "~/components/TimelineCard";
 
 const URL = "https://developers.prtimes.jp/author/ryuyayanagi/feed/";
 
-export const fetchPrtimesFeed = async (): Promise<Timeline[]> => {
+export const fetchPrtimesFeed = async (): Promise<TimelineItem[]> => {
   const xml = await (await fetch(URL)).text();
   let {
     rss: { channel },

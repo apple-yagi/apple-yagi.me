@@ -8,6 +8,7 @@ import { Spacer } from "~/components/Spacer";
 import { Timeline, TimelineCard } from "~/components/TimelineCard";
 import { API_FETCH_KV_KEY } from "~/consts/kv";
 import { fetchPrtimesFeed } from "~/api/prtimes";
+import { Footer } from "~/components/Footer";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -55,6 +56,7 @@ export default function Index() {
           <TimelineCard key={i} {...timeline} />
         ))}
       </div>
+      <Footer />
     </Container>
   );
 }

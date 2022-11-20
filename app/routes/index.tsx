@@ -17,7 +17,7 @@ export const meta: MetaFunction = () => ({
 
 export const loader: LoaderFunction = async () => {
   const cacheData = (await API_FETCH_KV.get(
-    API_FETCH_KV_KEY.zennFeed,
+    API_FETCH_KV_KEY.timeline,
     "json"
   )) as Timeline[];
 
@@ -25,14 +25,17 @@ export const loader: LoaderFunction = async () => {
     return json(cacheData);
   }
 
-  const feed = await fetchZeenFeed();
-  const feeds = await fetchPrtimesFeed();
+  const zennFeeds = await fetchZeenFeed();
+  const prtimesFeeds = await fetchPrtimesFeed();
+  const timeline = [...zennFeeds, ...prtimesFeeds].sort((a, b) =>
+    a.pubDate > b.pubDate ? -1 : 1
+  );
 
-  await API_FETCH_KV.put("timeline", JSON.stringify(feed), {
+  await API_FETCH_KV.put(API_FETCH_KV_KEY.timeline, JSON.stringify(timeline), {
     expirationTtl: 3600,
   });
 
-  return [...feed, ...feeds];
+  return timeline;
 };
 
 export default function Index() {

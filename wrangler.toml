@@ -14,3 +14,6 @@ kv_namespaces = [
 
 [build]
   command = "npm run build:css && npm run build:remix"
+
+[vars]
+  TZ = "Asia/Tokyo"

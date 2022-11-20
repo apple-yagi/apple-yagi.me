@@ -3,10 +3,9 @@ import { SocialLinks } from "~/components/SocialLinks";
 import { json, LoaderFunction, MetaFunction } from "@remix-run/cloudflare";
 import { useLoaderData } from "@remix-run/react";
 import { fetchZeenFeed } from "~/api/zenn";
-import type { ZeenFeed } from "~/api/zenn/types";
 import { Container } from "~/components/Container";
 import { Spacer } from "~/components/Spacer";
-import { TimelineCard } from "~/components/TimelineCard";
+import { Timeline, TimelineCard } from "~/components/TimelineCard";
 import { API_FETCH_KV_KEY } from "~/consts/kv";
 
 export const meta: MetaFunction = () => ({
@@ -19,7 +18,7 @@ export const loader: LoaderFunction = async () => {
   const cacheData = (await API_FETCH_KV.get(
     API_FETCH_KV_KEY.zennFeed,
     "json"
-  )) as ZeenFeed;
+  )) as Timeline[];
 
   if (cacheData) {
     return json(cacheData);
@@ -27,7 +26,7 @@ export const loader: LoaderFunction = async () => {
 
   const feed = await fetchZeenFeed();
 
-  await API_FETCH_KV.put("zeen_feed", JSON.stringify(feed), {
+  await API_FETCH_KV.put("timeline", JSON.stringify(feed), {
     expirationTtl: 3600,
   });
 
@@ -35,7 +34,7 @@ export const loader: LoaderFunction = async () => {
 };
 
 export default function Index() {
-  const zennFeed = useLoaderData<ZeenFeed>();
+  const timelines = useLoaderData<Timeline[]>();
 
   return (
     <Container className="px-6">
@@ -47,8 +46,8 @@ export default function Index() {
       <h2 className="text-4xl font-bold">Timeline</h2>
       <Spacer size={12} />
       <div className="flex flex-col gap-8">
-        {zennFeed.items.map((item, i) => (
-          <TimelineCard key={i} {...item} />
+        {timelines.map((timeline, i) => (
+          <TimelineCard key={i} {...timeline} />
         ))}
       </div>
     </Container>

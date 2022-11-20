@@ -7,6 +7,7 @@ import { Container } from "~/components/Container";
 import { Spacer } from "~/components/Spacer";
 import { Timeline, TimelineCard } from "~/components/TimelineCard";
 import { API_FETCH_KV_KEY } from "~/consts/kv";
+import { fetchPrtimesFeed } from "~/api/prtimes";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -25,12 +26,13 @@ export const loader: LoaderFunction = async () => {
   }
 
   const feed = await fetchZeenFeed();
+  const feeds = await fetchPrtimesFeed();
 
   await API_FETCH_KV.put("timeline", JSON.stringify(feed), {
     expirationTtl: 3600,
   });
 
-  return feed;
+  return [...feed, ...feeds];
 };
 
 export default function Index() {

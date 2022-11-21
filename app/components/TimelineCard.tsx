@@ -60,7 +60,7 @@ export const TimelineCard = ({
         <div className="flex pt-3 gap-2 items-center">
           <TimelineImage kind={kind} />
           <span className="text-xs sm:text-sm">
-            {new Date(pubDate).toLocaleDateString()}
+            {new Date(pubDate).toLocaleString("ja-JP")}
           </span>
         </div>
       </div>

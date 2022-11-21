@@ -8,7 +8,7 @@ export const fetchQiitaFeed = async (): Promise<TimelineItem[]> => {
 
   return Array.from(items).map((item: any) => ({
     title: item.title,
-    pubDate: item.created_at,
+    pubDate: new Date(item.created_at).toLocaleDateString("ja-JP"),
     link: item.url,
     kind: "Qiita",
   }));

@@ -13,7 +13,7 @@ export const fetchPrtimesFeed = async (): Promise<TimelineItem[]> => {
 
   return Array.from(channel.item).map((item: any) => ({
     title: item.title[0],
-    pubDate: item.pubDate[0],
+    pubDate: new Date(item.pubDate[0]).toLocaleDateString("ja-JP"),
     link: item.link[0],
     kind: "Prtimes",
   }));

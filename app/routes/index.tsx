@@ -10,6 +10,7 @@ import { API_FETCH_KV_KEY } from "~/consts/kv";
 import { fetchPrtimesFeed } from "~/api/prtimes";
 import { Footer } from "~/components/Footer";
 import { fetchQiitaFeed } from "~/api/qiita";
+import { Timeline } from "~/components/Timeline";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -56,13 +57,7 @@ export default function Index() {
       <Spacer size={16} />
       <SocialLinks />
       <Spacer size={24} />
-      <h2 className="text-4xl font-bold">Timeline</h2>
-      <Spacer size={12} />
-      <div className="flex flex-col gap-8">
-        {timeline.map((item, i) => (
-          <TimelineCard key={i} {...item} />
-        ))}
-      </div>
+      <Timeline timeline={timeline} />
       <Footer />
     </Container>
   );

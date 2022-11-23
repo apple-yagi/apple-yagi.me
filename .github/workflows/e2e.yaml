@@ -47,7 +47,7 @@ jobs:
         run: pnpm run test
 
       - if: ${{ github.event_name == 'workflow_run' }}
-        name: Run E2E
+        name: Run E2E for production
         run: pnpm run test:production
 
       - uses: actions/upload-artifact@v3

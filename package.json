@@ -13,8 +13,11 @@
     "dev": "pnpm run build && run-p \"dev:*\"",
     "start": "cross-env NODE_ENV=production miniflare ./build/index.js",
     "api:build": "aspida",
-    "lint": "eslint app --fix --ext ts,tsx",
-    "format": "rome format app --write"
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint app --ext ts,tsx",
+    "lint:fix": "eslint app --fix --ext ts,tsx",
+    "format": "rome format app",
+    "format:write": "rome format app --write"
   },
   "dependencies": {
     "@aspida/fetch": "1.11.0",

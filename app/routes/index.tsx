@@ -5,7 +5,7 @@ import { useLoaderData } from "@remix-run/react";
 import { fetchZeenFeed } from "~/api/zenn";
 import { Container } from "~/components/Container";
 import { Spacer } from "~/components/Spacer";
-import { TimelineCard, TimelineItem } from "~/components/TimelineCard";
+import { TimelineItem } from "~/components/TimelineCard";
 import { API_FETCH_KV_KEY } from "~/consts/kv";
 import { fetchPrtimesFeed } from "~/api/prtimes";
 import { Footer } from "~/components/Footer";

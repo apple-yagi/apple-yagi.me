@@ -26,14 +26,19 @@ jobs:
           version: 7
           run_install: true
 
-      - name: start app
+      - name: Start app container
         run: docker compose -f e2e.yaml up --build -d
         working-directory: .
 
       - run: docker compose -f e2e.yaml ps -a
         working-directory: .
 
-      - name: e2e 💚
+      - name: Sleep for 5 seconds
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '5s'
+
+      - name: Run E2E
         run: pnpm run test
 
       - uses: actions/upload-artifact@v3

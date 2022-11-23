@@ -33,7 +33,7 @@ jobs:
       - name: e2e 💚
         run: pnpm run test
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         if: success() || failure()
         with:
           name: test-results

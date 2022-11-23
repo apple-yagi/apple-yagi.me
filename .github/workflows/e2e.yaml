@@ -27,26 +27,26 @@ jobs:
           version: 7
           run_install: true
 
-      - if: ${{ github.event_name != 'workflow_dispatch' }}
+      - if: ${{ github.event_name != 'workflow_run' }}
         name: Start app container
         run: docker compose -f e2e.yaml up --build -d
         working-directory: .
 
-      - if: ${{ github.event_name != 'workflow_dispatch' }}
+      - if: ${{ github.event_name != 'workflow_run' }}
         run: docker compose -f e2e.yaml ps -a
         working-directory: .
 
-      - if: ${{ github.event_name != 'workflow_dispatch' }}
+      - if: ${{ github.event_name != 'workflow_run' }}
         name: Sleep for 5 seconds
         uses: jakejarvis/wait-action@master
         with:
           time: '5s'
 
-      - if: ${{ github.event_name != 'workflow_dispatch' }}
+      - if: ${{ github.event_name != 'workflow_run' }}
         name: Run E2E
         run: pnpm run test
 
-      - if: ${{ github.event_name == 'workflow_dispatch' }}
+      - if: ${{ github.event_name == 'workflow_run' }}
         name: Run E2E
         run: pnpm run test:production
 

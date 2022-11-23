@@ -27,7 +27,7 @@ jobs:
           run_install: true
 
       - name: start app
-        run: docker compose up --build -d
+        run: docker compose -f e2e.yaml up --build -d
         working-directory: .
 
       - name: e2e 💚

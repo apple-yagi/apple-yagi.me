@@ -1,0 +1,41 @@
+name: E2E
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows:
+      - CI
+    types:
+      - completed
+
+jobs:
+  e2e:
+    runs-on: ubuntu-22.04
+
+    defaults:
+      run:
+        working-directory: e2e
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+          run_install: true
+
+      - name: start app
+        run: docker compose up --build -d
+        working-directory: .
+
+      - name: e2e 💚
+        run: pnpm run test
+
+      - uses: actions/upload-artifact@v2
+        if: success() || failure()
+        with:
+          name: test-results
+          path: e2e/test-results
+          retention-days: 7

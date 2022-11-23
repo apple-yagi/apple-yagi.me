@@ -6,10 +6,12 @@
   "scripts": {
     "codegen": "playwright codegen 'http://127.0.0.1:8787/'",
     "debug": "playwright test --debug",
-    "test": "playwright test"
+    "test": "playwright test",
+    "test:production": "cross-env NODE_ENV=production playwright test"
   },
   "dependencies": {
     "@playwright/test": "1.28.0",
+    "cross-env": "7.0.3",
     "playwright": "1.28.0",
     "typescript": "4.9.3"
   }

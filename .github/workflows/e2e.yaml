@@ -2,6 +2,11 @@ name: E2E
 
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows:
+      - Deploy
+    types:
+      - completed
   pull_request:
 
 jobs:
@@ -22,20 +27,28 @@ jobs:
           version: 7
           run_install: true
 
-      - name: Start app container
+      - if: ${{ github.event_name != 'workflow_dispatch' }}
+        name: Start app container
         run: docker compose -f e2e.yaml up --build -d
         working-directory: .
 
-      - run: docker compose -f e2e.yaml ps -a
+      - if: ${{ github.event_name != 'workflow_dispatch' }}
+        run: docker compose -f e2e.yaml ps -a
         working-directory: .
 
-      - name: Sleep for 5 seconds
+      - if: ${{ github.event_name != 'workflow_dispatch' }}
+        name: Sleep for 5 seconds
         uses: jakejarvis/wait-action@master
         with:
           time: '5s'
 
-      - name: Run E2E
+      - if: ${{ github.event_name != 'workflow_dispatch' }}
+        name: Run E2E
         run: pnpm run test
+
+      - if: ${{ github.event_name == 'workflow_dispatch' }}
+        name: Run E2E
+        run: pnpm run test:production
 
       - uses: actions/upload-artifact@v3
         if: success() || failure()

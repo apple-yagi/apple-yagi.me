@@ -30,7 +30,7 @@ jobs:
         run: docker compose -f e2e.yaml up --build -d
         working-directory: .
 
-      - run: docker compose ps -a
+      - run: docker compose -f e2e.yaml ps -a
         working-directory: .
 
       - name: e2e 💚

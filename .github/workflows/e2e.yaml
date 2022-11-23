@@ -30,6 +30,9 @@ jobs:
         run: docker compose -f e2e.yaml up --build -d
         working-directory: .
 
+      - run: docker compose ps -a
+        working-directory: .
+
       - name: e2e 💚
         run: pnpm run test
 

@@ -1,4 +1,4 @@
-import { ComponentProps } from "react";
+import type { ComponentProps } from "react";
 
 export const TwitterIcon = (props: ComponentProps<"svg">) => (
   <svg viewBox="0 0 27 27" aria-label="Twitter" {...props}>

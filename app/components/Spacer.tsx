@@ -1,4 +1,4 @@
-import { ComponentProps } from "react";
+import type { ComponentProps } from "react";
 
 type Size = typeof TAILWIND_SIZES_MAP[number]["n"];
 type Axis = "vertical" | "horizontal";
@@ -8,12 +8,7 @@ interface SpacerProps {
   axis?: Axis;
 }
 
-export const Spacer = ({
-  size,
-  axis,
-  className,
-  ...props
-}: SpacerProps & ComponentProps<"span">) => {
+export const Spacer = ({ size, axis, className, ...props }: SpacerProps & ComponentProps<"span">) => {
   const w = axis === "vertical" ? "px" : size;
   const h = axis === "horizontal" ? "px" : size;
 

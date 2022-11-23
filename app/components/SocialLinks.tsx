@@ -23,13 +23,7 @@ export const SocialLinks = () => (
     </a>
     <a href="https://qiita.com/apple-yagi">
       <LinkItem className="bg-gradient-to-br from-green-200 via-slate-100 to-green-300">
-        <Image
-          imageName="qiita.png"
-          alt="Qiita"
-          width={64}
-          height={64}
-          loading="eager"
-        />
+        <Image imageName="qiita.png" alt="Qiita" width={64} height={64} loading="eager" />
       </LinkItem>
     </a>
   </div>

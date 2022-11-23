@@ -1,0 +1,3 @@
+{
+  "*.{js,jsx,ts,tsx}": ["rome format", "eslint"]
+}

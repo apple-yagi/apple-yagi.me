@@ -1,10 +1,6 @@
-import { ComponentProps } from "react";
+import type { ComponentProps } from "react";
 
-export const Container = ({
-  children,
-  className,
-  ...props
-}: ComponentProps<"div">) => (
+export const Container = ({ children, className, ...props }: ComponentProps<"div">) => (
   <div className={`mx-auto max-w-screen-md ${className ?? ""}`} {...props}>
     {children}
   </div>

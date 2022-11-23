@@ -1,0 +1,12 @@
+{
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentSize": 2,
+    "ignore": ["/generated.css"],
+    "lineWidth": 120
+  },
+  "linter": {
+    "enabled": false
+  }
+}

@@ -1,5 +1,5 @@
-import api from "./$api";
 import aspida from "@aspida/fetch";
+import api from "./$api";
 
 const fetchConfig = {
   headers: {

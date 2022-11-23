@@ -1,4 +1,4 @@
-import { ComponentProps } from "react";
+import type { ComponentProps } from "react";
 
 export const ZennIcon = (props: ComponentProps<"svg">) => (
   <svg viewBox="0 0 88.3 88.3" aria-label="Zenn" {...props}>

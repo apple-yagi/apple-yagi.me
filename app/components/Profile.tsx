@@ -11,10 +11,9 @@ export const Profile = () => (
       height={100}
     />
     <p className="text-base sm:py-4">
-      <span className="animate-wave-hand inline-block leading-7">👋</span> Hello
-      World
+      <span className="animate-wave-hand inline-block leading-7">👋</span> Hello World
       <br />
-      <span className="pl-1 leading-7">I'm software developer.</span>
+      <span className="pl-1 leading-7">I&#39;m software developer.</span>
     </p>
   </div>
 );

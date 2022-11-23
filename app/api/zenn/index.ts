@@ -1,5 +1,5 @@
 import { parseStringPromise } from "xml2js";
-import { TimelineItem } from "~/components/TimelineCard";
+import type { TimelineItem } from "~/components/TimelineCard";
 import { getEnglishDate } from "~/utils/getEnglishDate";
 
 const URL = "https://zenn.dev/apple_yagi/feed";

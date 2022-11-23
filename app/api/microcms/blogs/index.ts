@@ -1,5 +1,5 @@
-import { MicroCMSListResponse, MicroCMSQueries } from "microcms-js-sdk";
-import { Content } from "../types";
+import type { MicroCMSListResponse, MicroCMSQueries } from "microcms-js-sdk";
+import type { Content } from "../types";
 
 export type Methods = {
   get: {

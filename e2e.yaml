@@ -7,4 +7,4 @@ services:
       dockerfile: Dockerfile.e2e
     ports:
       - 8787:8787
-    command: pnpm run build & pnpm run start
+    command: pnpm run start

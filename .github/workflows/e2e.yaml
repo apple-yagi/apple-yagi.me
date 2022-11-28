@@ -27,6 +27,13 @@ jobs:
           version: 7
           run_install: true
 
+      - name: Setup dot env file
+        run: |
+          echo ${{ secrets.MICROCMS_BASE_URL }} >> .env
+          echo ${{ secrets.X_MICROCMS_API_KEY }} >> .env
+          echo TZ=Asia/Tokyo >> .env
+        working-directory: .
+
       - if: ${{ github.event_name != 'workflow_run' }}
         name: Start app container
         run: docker compose -f e2e.yaml up --build -d

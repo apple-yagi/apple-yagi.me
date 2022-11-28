@@ -1,4 +1,4 @@
 export type Content = {
-  title?: string;
-  body?: string;
+  title: string;
+  content?: string;
 };

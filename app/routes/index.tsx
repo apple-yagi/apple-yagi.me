@@ -1,4 +1,4 @@
-import type { LoaderFunction, MetaFunction } from "@remix-run/cloudflare";
+import type { LoaderFunction } from "@remix-run/cloudflare";
 import { json } from "@remix-run/cloudflare";
 import { useLoaderData } from "@remix-run/react";
 import { SocialLinks } from "~/components/SocialLinks";
@@ -9,15 +9,10 @@ import { Spacer } from "~/components/Spacer";
 import type { TimelineItem } from "~/components/TimelineCard";
 import { API_FETCH_KV_KEY } from "~/consts/kv";
 import { fetchPrtimesFeed } from "~/api/prtimes";
-import { Footer } from "~/components/Footer";
 import { fetchQiitaFeed } from "~/api/qiita";
 import { Timeline } from "~/components/Timeline";
-
-export const meta: MetaFunction = () => ({
-  charset: "utf-8",
-  title: "apple-yagi",
-  viewport: "width=device-width,initial-scale=1",
-});
+import { fetchMicrocms } from "~/api/microcms";
+import { Footer } from "~/components/Footer";
 
 export const loader: LoaderFunction = async () => {
   const cacheData = (await API_FETCH_KV.get(API_FETCH_KV_KEY.timeline, "json")) as TimelineItem[];
@@ -26,7 +21,7 @@ export const loader: LoaderFunction = async () => {
     return json(cacheData);
   }
 
-  const promiseList = await Promise.all([fetchZeenFeed(), fetchPrtimesFeed(), fetchQiitaFeed()]);
+  const promiseList = await Promise.all([fetchZeenFeed(), fetchPrtimesFeed(), fetchQiitaFeed(), fetchMicrocms()]);
 
   const timeline = promiseList
     .flat()
@@ -36,7 +31,7 @@ export const loader: LoaderFunction = async () => {
     expirationTtl: 3600,
   });
 
-  return timeline;
+  return json(timeline);
 };
 
 export default function Index() {

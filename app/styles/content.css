@@ -1,0 +1,50 @@
+.content > * {
+  color: rgba(242, 244, 255, 0.8);
+}
+
+.content h1 {
+  margin: 24px 0 16px;
+  padding-bottom: 4px;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.content h2 {
+  margin: 24px 0 16px;
+  padding-bottom: 4px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.content h3 {
+  margin-bottom: 12px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.content p {
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.content ul {
+  padding-left: 24px;
+  list-style: none;
+}
+
+.content ul > li {
+  margin: 8px 0;
+  list-style: disc;
+  list-style-position: outside;
+}
+
+.content ul > li::marker {
+  font-size: 18px;
+  color: #ccc;
+}
+
+.content a {
+  margin: 0 2px;
+  color: #9da2ff;
+  text-decoration: underline;
+}

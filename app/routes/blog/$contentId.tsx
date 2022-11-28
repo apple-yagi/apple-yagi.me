@@ -22,6 +22,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => ({
 
 export const loader = async ({ params }: DataFunctionArgs) => {
   const content = await microcmsApi.blogs._id(params.contentId as string).$get();
+  content.publishedAt = getEnglishDate(new Date(content.publishedAt || ""));
   return json(content);
 };
 
@@ -39,7 +40,7 @@ export default function $ContentId() {
         <h1 className="text-2xl pt-10 py-5">{content.title}</h1>
         <div>
           <div className="text-gray-400 text-sm">Published</div>
-          <time className="text-sm">{getEnglishDate(new Date(content.publishedAt || ""))}</time>
+          <time className="text-sm">{content.publishedAt || ""}</time>
         </div>
       </div>
       <Spacer size={10} />

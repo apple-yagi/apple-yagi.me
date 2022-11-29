@@ -1,3 +1,4 @@
+import { Link } from "@remix-run/react";
 import type { ComponentPropsWithoutRef } from "react";
 import { memo } from "react";
 import { ZennIcon } from "./icons/ZennIcon";
@@ -39,12 +40,8 @@ const TimelineImage = memo(({ kind }: { kind: TimelineKind }) => {
 });
 TimelineImage.displayName = "TimelineImage";
 
-export const TimelineCard = ({ title, pubDate, link, kind, className, ...props }: TimelineCardProps) => (
-  <a
-    href={link}
-    target={kind === "MyBlog" ? undefined : "_blank"}
-    rel={kind === "MyBlog" ? undefined : "noopener noreferrer"}
-  >
+export const TimelineCard = ({ title, pubDate, link, kind, className, ...props }: TimelineCardProps) => {
+  const Card = () => (
     <div
       className={`flex flex-col bg-secondary rounded-xl overflow-hidden hover:-translate-y-1 transition ${
         className ?? ""
@@ -59,5 +56,18 @@ export const TimelineCard = ({ title, pubDate, link, kind, className, ...props }
         </div>
       </div>
     </div>
-  </a>
-);
+  );
+
+  if (kind === "MyBlog")
+    return (
+      <Link to={link}>
+        <Card />
+      </Link>
+    );
+
+  return (
+    <a href={link} target="_blank" rel="noopener noreferrer">
+      <Card />
+    </a>
+  );
+};

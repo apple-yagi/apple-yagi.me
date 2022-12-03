@@ -48,3 +48,11 @@
   color: #9da2ff;
   text-decoration: underline;
 }
+
+.content pre {
+  margin: 1em 0;
+  padding: 1em;
+  border-radius: 5px;
+  background: #25292f;
+  white-space: pre-wrap;
+}

@@ -18,7 +18,7 @@ export function links() {
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => ({
   title: data.title,
-  description: data.content?.slice(0, 50),
+  description: data.content?.replace(/(<([^>]+)>)/gi, '').slice(0, 50),
 });
 
 export const loader = async ({ params }: DataFunctionArgs) => {

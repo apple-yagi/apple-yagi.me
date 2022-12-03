@@ -10,6 +10,7 @@ import { Container } from "~/components/Container";
 import { Footer } from "~/components/Footer";
 import { getEnglishDate } from "~/utils/getEnglishDate";
 import { Spacer } from "~/components/Spacer";
+import { Bio } from "~/components/Bio";
 
 export function links() {
   return [{ rel: "stylesheet", href: styles }];
@@ -45,6 +46,8 @@ export default function $ContentId() {
       </div>
       <Spacer size={10} />
       <ContentViewer text={content.content || ""} />
+      <Spacer size={20} />
+      <Bio />
       <Footer />
     </Container>
   );

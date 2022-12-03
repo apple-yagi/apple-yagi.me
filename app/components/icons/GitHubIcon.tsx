@@ -1,6 +1,6 @@
 import type { ComponentProps } from "react";
 
-export const GitHubIcon = ({fill = "currentColor", ...props}: ComponentProps<"svg">) => (
+export const GitHubIcon = ({ fill = "currentColor", ...props }: ComponentProps<"svg">) => (
   <svg viewBox="0 0 27 27" aria-label="GitHub" {...props}>
     <path
       fill={fill}

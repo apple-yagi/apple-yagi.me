@@ -52,7 +52,8 @@
 .content pre {
   margin: 1em 0;
   padding: 1em;
-  border-radius: 5px;
+  border-radius: 6px;
   background: #25292f;
-  white-space: pre-wrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }

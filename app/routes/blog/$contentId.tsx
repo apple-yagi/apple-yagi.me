@@ -19,14 +19,14 @@ export function links() {
 export const meta: MetaFunction<typeof loader> = ({ data }) => ({
   title: data.title,
   description: data.content.replace(/(<([^>]+)>)/gi, "").slice(0, 50),
-      'og:url': `https://apple-yagi.me/blog/${data.id}`,
-    'og:title': `${data.title}`,
-    'og:description':  data.content.replace(/(<([^>]+)>)/gi, "").slice(0, 50),
-    'og:image': data.eyecatch.url,
-    'og:site_name': 'サイト名',
-    'twitter:card': data.eyecatch.url ? 'summary_large_image' : 'summary',
-    'twitter:creator': '@apple_yagi',
-    'twitter:site': '@apple_yagi',
+  "og:url": `https://apple-yagi.me/blog/${data.id}`,
+  "og:title": `${data.title}`,
+  "og:description": data.content.replace(/(<([^>]+)>)/gi, "").slice(0, 50),
+  "og:image": data.eyecatch.url,
+  "og:site_name": "apple-yagi",
+  "twitter:card": data.eyecatch.url ? "summary_large_image" : "summary",
+  "twitter:creator": "@apple_yagi",
+  "twitter:site": "@apple_yagi",
 });
 
 export const loader = async ({ params }: DataFunctionArgs) => {

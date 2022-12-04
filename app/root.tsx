@@ -11,6 +11,14 @@ export const meta: MetaFunction = () => ({
   title: "apple-yagi",
   description: "Personal website of apple-yagi.",
   viewport: "width=device-width,initial-scale=1",
+  "og:url": "https://apple-yagi.me",
+  "og:title": "apple-yagi",
+  "og:description": "Personal website of apple-yagi.",
+  "og:image": "https://storage.apple-yagi.me/apple-yagi-top-ogp.jpg",
+  "og:site_name": "apple-yagi",
+  "twitter:card": "summary_large_image",
+  "twitter:creator": "@apple_yagi",
+  "twitter:site": "@apple_yagi",
 });
 
 export default function App() {

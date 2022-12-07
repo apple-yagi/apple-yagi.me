@@ -3,11 +3,11 @@ lockfileVersion: 5.4
 specifiers:
   '@aspida/fetch': 1.11.0
   '@cloudflare/workers-types': 4.20221111.1
-  '@remix-run/cloudflare': 1.8.1
-  '@remix-run/cloudflare-workers': 1.8.1
-  '@remix-run/dev': 1.8.1
-  '@remix-run/eslint-config': 1.8.1
-  '@remix-run/react': 1.8.1
+  '@remix-run/cloudflare': 1.8.2
+  '@remix-run/cloudflare-workers': 1.8.2
+  '@remix-run/dev': 1.8.2
+  '@remix-run/eslint-config': 1.8.2
+  '@remix-run/react': 1.8.2
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.9
   '@types/xml2js': 0.4.11
@@ -34,9 +34,9 @@ specifiers:
 
 dependencies:
   '@aspida/fetch': 1.11.0
-  '@remix-run/cloudflare': 1.8.1_gcxgbrjhht2vqrprdtu7piso2u
-  '@remix-run/cloudflare-workers': 1.8.1_gcxgbrjhht2vqrprdtu7piso2u
-  '@remix-run/react': 1.8.1_biqbaboplfbrettd7655fr4n2y
+  '@remix-run/cloudflare': 1.8.2_gcxgbrjhht2vqrprdtu7piso2u
+  '@remix-run/cloudflare-workers': 1.8.2_gcxgbrjhht2vqrprdtu7piso2u
+  '@remix-run/react': 1.8.2_biqbaboplfbrettd7655fr4n2y
   aspida: 1.11.0
   cross-env: 7.0.3
   microcms-js-sdk: 2.3.2
@@ -46,8 +46,8 @@ dependencies:
 
 devDependencies:
   '@cloudflare/workers-types': 4.20221111.1
-  '@remix-run/dev': 1.8.1_biqbaboplfbrettd7655fr4n2y
-  '@remix-run/eslint-config': 1.8.1_3d7osmpeeoyqkoluqnkoj2u33y
+  '@remix-run/dev': 1.8.2_biqbaboplfbrettd7655fr4n2y
+  '@remix-run/eslint-config': 1.8.2_3d7osmpeeoyqkoluqnkoj2u33y
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.9
   '@types/xml2js': 0.4.11
@@ -1950,40 +1950,40 @@ packages:
       tslib: 2.4.1
     dev: true
 
-  /@remix-run/cloudflare-workers/1.8.1_gcxgbrjhht2vqrprdtu7piso2u:
-    resolution: {integrity: sha512-I0KziVsR/bcLsxQx4jaGURUB0QkcjP8kQSvSCdpRpWzRyhhrc/kc8lol+uR9qMxwZ2D6AmlOgdme8O+X0JNRMw==}
+  /@remix-run/cloudflare-workers/1.8.2_gcxgbrjhht2vqrprdtu7piso2u:
+    resolution: {integrity: sha512-HAAau2fiSbukN5xXdiROFaFOn+rjmw1y7xkhvocn/ASiQqX0g88KZzerKx74R0DeoOl//NbMuMhQ0m0+MsGRHg==}
     engines: {node: '>=14'}
     peerDependencies:
       '@cloudflare/workers-types': ^2.0.0 || ^3.0.0
     dependencies:
       '@cloudflare/kv-asset-handler': 0.1.3
       '@cloudflare/workers-types': 4.20221111.1
-      '@remix-run/cloudflare': 1.8.1_gcxgbrjhht2vqrprdtu7piso2u
+      '@remix-run/cloudflare': 1.8.2_gcxgbrjhht2vqrprdtu7piso2u
     transitivePeerDependencies:
       - react
       - react-dom
     dev: false
 
-  /@remix-run/cloudflare/1.8.1_gcxgbrjhht2vqrprdtu7piso2u:
-    resolution: {integrity: sha512-uYKAM47K31wDZ1i5PZGxIgQKym/mMcrR3rJ1eKVvDZaIkDQ7dkKfM+nb2/fcoJXTMEP378L8fa/a0iVb2vmyKw==}
+  /@remix-run/cloudflare/1.8.2_gcxgbrjhht2vqrprdtu7piso2u:
+    resolution: {integrity: sha512-HWjHIYONJBTnpYQcFb6UqIVs/8HRCONHnG8hIKOtcc1iz5mQZO4GtT8kEDU06fxS54M8MeXkqM8l1rKiG93ZGw==}
     engines: {node: '>=14'}
     peerDependencies:
       '@cloudflare/workers-types': ^2.0.0 || ^3.0.0
     dependencies:
       '@cloudflare/kv-asset-handler': 0.1.3
       '@cloudflare/workers-types': 4.20221111.1
-      '@remix-run/server-runtime': 1.8.1_biqbaboplfbrettd7655fr4n2y
+      '@remix-run/server-runtime': 1.8.2_biqbaboplfbrettd7655fr4n2y
     transitivePeerDependencies:
       - react
       - react-dom
     dev: false
 
-  /@remix-run/dev/1.8.1_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-5Yd8TW3GGPCL7xr4q7/yAojnltTKaqPNOSNyoSQC6bS/OhBMYftkdnmLw28fvrplQPC5wqEVIlz8NR0SPYXTzA==}
+  /@remix-run/dev/1.8.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-hhLOsILCuo8qBqmbc4Aw1Rps+d8VkuxcwEO04ZQPbz3zGVILvuJQ07O02deWfbF/oK71e0OysU/4CpP1wcXxJA==}
     engines: {node: '>=14'}
     hasBin: true
     peerDependencies:
-      '@remix-run/serve': 1.8.1
+      '@remix-run/serve': 1.8.2
     peerDependenciesMeta:
       '@remix-run/serve':
         optional: true
@@ -1996,7 +1996,7 @@ packages:
       '@babel/types': 7.20.5
       '@esbuild-plugins/node-modules-polyfill': 0.1.4_esbuild@0.15.12
       '@npmcli/package-json': 2.0.0
-      '@remix-run/server-runtime': 1.8.1_biqbaboplfbrettd7655fr4n2y
+      '@remix-run/server-runtime': 1.8.2_biqbaboplfbrettd7655fr4n2y
       arg: 5.0.2
       cacache: 15.3.0
       chalk: 4.1.2
@@ -2041,8 +2041,8 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@remix-run/eslint-config/1.8.1_3d7osmpeeoyqkoluqnkoj2u33y:
-    resolution: {integrity: sha512-k8x1hb8mW57k2k3koYOWNkl2Q7N/D+0M00nedXSnXfFhL8W2tCVAcTLQRksXseEODGL/nBlqGVktJCqS4UK0eQ==}
+  /@remix-run/eslint-config/1.8.2_3d7osmpeeoyqkoluqnkoj2u33y:
+    resolution: {integrity: sha512-wHjDFXIQiXvjyyXVr0KdtcIpEXTgyQv+HipwtKZi7R81n9iXZ+4XqXzOuU+DBJ2RPxrMHh9qHCXhllRXPxE0Rw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^8.0.0
@@ -2077,8 +2077,8 @@ packages:
       - supports-color
     dev: true
 
-  /@remix-run/react/1.8.1_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-OjEKZJTaZQjxgMeaqywxF7omdWQq48s9sqlxkrmXMu+Ch1OUP7+XBYXMPsY5K9G+yJSMqVUqFU6VhBlLoCpsgw==}
+  /@remix-run/react/1.8.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-awH9kUFq9EMCaYStOHL4O04QE6eLexSc851EAg4FGGoW6jGrDU6KYrnwimLj7rj166XjXmlpnAaXd21/dSSXGw==}
     engines: {node: '>=14'}
     peerDependencies:
       react: '>=16.8'
@@ -2090,18 +2090,18 @@ packages:
       react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
     dev: false
 
-  /@remix-run/router/1.0.4:
-    resolution: {integrity: sha512-gTL8H5USTAKOyVA4xczzDJnC3HMssdFa3tRlwBicXynx9XfiXwneHnYQogwSKpdCkjXISrEKSTtX62rLpNEVQg==}
+  /@remix-run/router/1.0.5:
+    resolution: {integrity: sha512-my0Mycd+jruq/1lQuO5LBB6WTlL/e8DTCYWp44DfMTDcXz8DcTlgF0ISaLsGewt+ctHN+yA8xMq3q/N7uWJPug==}
     engines: {node: '>=14'}
 
-  /@remix-run/server-runtime/1.8.1_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-GcOhrQOB5E1vSPUA1OLzPRRyHErdA6QsKpz4LAw2rayvpBd47bhU18bFBJEPr1vwmimgeU/9QnopUHz5/eOZ5w==}
+  /@remix-run/server-runtime/1.8.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-6VLootGC4SyhG1qOOVeXsBrJ3/E3GoQ8YJh5W4IRofO5hNWWy5e4dp/z758RCTGFk4pKGjj64KSnh7NBeS0afA==}
     engines: {node: '>=14'}
     peerDependencies:
       react: '>=16.8'
       react-dom: '>=16.8'
     dependencies:
-      '@remix-run/router': 1.0.4
+      '@remix-run/router': 1.0.5
       '@types/cookie': 0.4.1
       '@web3-storage/multipart-parser': 1.0.0
       cookie: 0.4.2
